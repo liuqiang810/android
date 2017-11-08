@@ -13,7 +13,7 @@ import android.widget.Button;
 
 /**
  * Created by liuqiang on 2017/11/3.
- * 自定义Button，支持圆角矩形，圆形按钮等样式，可通过配置文件改变按下后的样式
+ * 自定义带波纹点击效果的Button，支持圆角矩形，圆形按钮等样式，可通过配置文件改变按下后的样式
  */
 public class CustomButton extends Button {
     private static String TAG = "CustomButton";
