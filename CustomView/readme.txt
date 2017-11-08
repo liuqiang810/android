@@ -14,7 +14,8 @@ app:textColorPress="@color/black"   按钮被按下时的文字颜色
 app:textColorDisable="@color/gray"      按钮不可用时文字颜色
 app:rippleColor="@color/colorAccent"       按钮被触摸时的波纹颜色
 示例：
-<com.liuqiang.customviewlibrary.CustomButton
+    xml方式
+    <com.liuqiang.customviewlibrary.CustomButton
             android:id="@+id/customButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -35,3 +36,18 @@ app:rippleColor="@color/colorAccent"       按钮被触摸时的波纹颜色
             app:textColorDisable="@color/gray"
             app:rippleColor="@color/colorAccent"
     />
+    代码方式
+    customButton_code = (CustomButton) findViewById(R.id.customButton1);
+            customButton_code.setShapeType(CustomButton.RECTANGLE)
+                    .setBgNormalColor(R.color.colorPrimary)
+                    .setBgPressedColor(R.color.colorPrimaryDark)
+                    .setBgDisableColor(R.color.white)
+                    .setCornersRadius(20)
+                    .setStrokeColor(R.color.black)
+                    .setStrokeWidth(10)
+                    .setTextNormalColor(R.color.white)
+                    .setTextPressedColor(R.color.black)
+                    .setTextDisableColor(R.color.gray)
+                    .setRippleColor(R.color.colorAccent)
+                    .use();
+        }

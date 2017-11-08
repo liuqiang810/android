@@ -112,7 +112,7 @@ public class CustomButton extends Button {
 
             rippleColor = a.getColorStateList(R.styleable.CustomButton_rippleColor);
             if (rippleColor == null || rippleColor.getDefaultColor() == 0) {
-                rippleColor = createDefaultRippleColorStateList();
+                rippleColor = createRippleColorStateList(Color.GRAY);
             }
         }
     }
@@ -228,8 +228,8 @@ public class CustomButton extends Button {
     }
 
     /** 设置默认ripple颜色 */
-    private ColorStateList createDefaultRippleColorStateList() {
-        int[] colors = new int[] {Color.GRAY};
+    private ColorStateList createRippleColorStateList(int color) {
+        int[] colors = new int[] {color};
         int[][] states = new int[1][];
         states[0] = new int[] { };
         ColorStateList colorList = new ColorStateList(states, colors);
@@ -257,7 +257,7 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setBgPressedColor(int color) {
-        this.bgColorPress = color;
+        this.bgColorPress = getResources().getColor(color);
         return this;
     }
 
@@ -268,7 +268,7 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setBgNormalColor(int color) {
-        this.bgColor = color;
+        this.bgColor = getResources().getColor(color);
         return this;
     }
 
@@ -279,10 +279,42 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setBgDisableColor(int color) {
-        this.bgColorDisable = color;
+        this.bgColorDisable = getResources().getColor(color);
         return this;
     }
 
+    /**
+     * 设置按下的颜色
+     *
+     * @param color 颜色
+     * @return 对象
+     */
+    public CustomButton setTextPressedColor(int color) {
+        this.textColorPress = getResources().getColor(color);
+        return this;
+    }
+
+    /**
+     * 设置正常的颜色
+     *
+     * @param color 颜色
+     * @return 对象
+     */
+    public CustomButton setTextNormalColor(int color) {
+        this.textColor = getResources().getColor(color);
+        return this;
+    }
+
+    /**
+     * 设置不可点击的颜色
+     *
+     * @param color 颜色
+     * @return 对象
+     */
+    public CustomButton setTextDisableColor(int color) {
+        this.textColorDisable = getResources().getColor(color);
+        return this;
+    }
 
     /**
      * 设置边框宽度
@@ -291,7 +323,7 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = dip2px(mContext, strokeWidth);
+        this.strokeWidth = strokeWidth;
         return this;
     }
 
@@ -302,7 +334,7 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setStrokeColor(int strokeColor) {
-        this.strokeColor = strokeColor;
+        this.strokeColor = getResources().getColor(strokeColor);
         return this;
     }
 
@@ -314,10 +346,14 @@ public class CustomButton extends Button {
      * @return 对象
      */
     public CustomButton setCornersRadius(float radius) {
-        this.cornersRadius = dip2px(mContext, radius);
+        this.cornersRadius = radius;
         return this;
     }
 
+    public CustomButton setRippleColor(int color){
+        this.rippleColor = createRippleColorStateList(getResources().getColor(color));
+        return this;
+    }
 
     /**
      * 使用shape

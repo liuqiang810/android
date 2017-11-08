@@ -10,7 +10,7 @@
             android:id="@+id/customButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="自定义按钮"
+            android:text="自定义按钮（xml设置）"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:gravity="center"
@@ -39,6 +39,16 @@
             android:gravity="center"
             android:layout_marginTop="@dimen/dp_20"
     />
-    <!--android:background="?android:attr/selectableItemBackground"-->
+
+    <com.liuqiang.customviewlibrary.CustomButton
+            android:id="@+id/customButton1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="自定义按钮（代码设置）"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+    />
 
 </LinearLayout>
