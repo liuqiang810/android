@@ -51,4 +51,23 @@
             android:layout_marginTop="@dimen/dp_20"
     />
 
+    <Button
+            android:id="@+id/up"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="up"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+    /><Button
+        android:id="@+id/down"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="down"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_20"
+/>
 </LinearLayout>
